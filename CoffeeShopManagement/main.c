@@ -51,7 +51,7 @@ void selectBasicOptionInfo()
     printf("\n\n\n \t\tSelect an Option:\n");
     printf("%c\t\t\t1. Print Item list.\n", ' ');
     printf("%c\t\t\t2. Add item to the menu.\n", ' ');
-    printf("%c\t\t\t3. Delete item to the menu.\n", ' ');
+    printf("%c\t\t\t3. Delete item from the menu.\n", ' ');
     printf("%c\t\t\t4. Update quantity of an item.\n", ' ');
     printf("%c\t\t\t5. View todays stat.\n", ' ');
     printf("%c\t\t\t9. Exit\n", ' ');
