@@ -84,7 +84,6 @@ void printStat(int *ind)
             sum += sellData[i].price;
         }
         printf(" \n\n\n\t\tTotal Sold: $%.2lf\n", sum);
-        printf("\t\tPress 8 to go back to main menu: ");
     }
     else
     {
@@ -95,7 +94,7 @@ void printStat(int *ind)
     return;
 }
 
-void placeOrder(int *idn,int *itemID)
+void placeOrder(int *idn, int *itemID)
 {
     int staged;
     printList();
@@ -132,7 +131,8 @@ void addItem(int *idn)
     return;
 }
 
-void removeItem(int *identifier){
+void removeItem(int *identifier)
+{
     int id, index, i, staged;
     printf("\n\n\t\tEnter a valid item ID to remove: ");
     scanf("%d", &id);
@@ -142,15 +142,18 @@ void removeItem(int *identifier){
         {
             printf("\t\tFound the item with ID: %d with name %s\n\t\t\tEnter 1 to confirm 0 to exit: ", COFFEEs[i].code, COFFEEs[i].name);
             scanf("%d", &staged);
-            if (staged == 0){
+            if (staged == 0)
+            {
                 *identifier = 8;
             }
-            else if (staged == 1){
-                for (int j = i; j < menuLength;j++){
-                    COFFEEs[j].code=COFFEEs[j + 1].code;
+            else if (staged == 1)
+            {
+                for (int j = i; j < menuLength; j++)
+                {
+                    COFFEEs[j].code = COFFEEs[j + 1].code;
                     strcpy(COFFEEs[j].name, COFFEEs[j + 1].name);
-                    COFFEEs[j].price=COFFEEs[j + 1].price;
-                    COFFEEs[j].inStock=COFFEEs[j + 1].inStock;
+                    COFFEEs[j].price = COFFEEs[j + 1].price;
+                    COFFEEs[j].inStock = COFFEEs[j + 1].inStock;
                 }
                 menuLength--;
                 printList();
@@ -204,7 +207,7 @@ int main()
     while (identifier)
     {
         if (identifier == 1)
-            placeOrder(&identifier,&itemID);
+            placeOrder(&identifier, &itemID);
         else if (identifier == 2)
             addItem(&identifier);
         else if (identifier == 3)
